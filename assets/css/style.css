@@ -352,30 +352,6 @@ main {
   letter-spacing: -0.015em;
 }
 
-.hero__name {
-  position: relative;
-  color: var(--accent-ink);
-  white-space: nowrap;
-}
-
-.hero__name::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0.08em;
-  height: 0.16em;
-  background: var(--accent);
-  opacity: 0.22;
-  border-radius: 2px;
-}
-
-.hero__title-lead {
-  display: block;
-  font-size: 0.6em;
-  margin-bottom: 0.28em;
-}
-
 .hero__lede {
   margin: 0 0 1.75rem;
   max-width: 36rem;
