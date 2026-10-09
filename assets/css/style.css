@@ -370,6 +370,12 @@ main {
   border-radius: 2px;
 }
 
+.hero__title-lead {
+  display: block;
+  font-size: 0.6em;
+  margin-bottom: 0.28em;
+}
+
 .hero__lede {
   margin: 0 0 1.75rem;
   max-width: 36rem;
