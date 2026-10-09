@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>排版样式一览 · 凝雨道祖的博客</title>
+<meta name="description" content="本站所有可用的排版元素汇总：标题、强调、列表、引用、代码块、表格、图片、提示块、键盘按键。">
+<meta name="author" content="凝雨道祖">
+<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#171512" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="排版样式一览">
+<meta property="og:description" content="本站所有可用的排版元素汇总。">
+<meta property="og:url" content="https://ningyudaozu.github.io/posts/typography.html">
+<meta property="article:published_time" content="2026-10-05">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="凝雨道祖的博客 · RSS" href="../feed.xml">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem("blog-theme");
+      if (t) document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="../index.html">
+      <span class="brand__mark" aria-hidden="true"></span>
+      凝雨道祖
+      <span class="brand__sub">Blog</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a class="nav__link" href="../index.html">首页</a>
+      <a class="nav__link" href="../archive.html">归档</a>
+      <a class="nav__link" href="../about.html">关于</a>
+      <button class="theme-toggle" type="button" aria-label="切换深色模式">
+        <svg class="icon icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2"></circle>
+          <path d="M12 2.2v2.4M12 19.4v2.4M2.2 12h2.4M19.4 12h2.4M5.1 5.1l1.7 1.7M17.2 17.2l1.7 1.7M18.9 5.1l-1.7 1.7M6.8 17.2l-1.7 1.7"></path>
+        </svg>
+        <svg class="icon icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20.4 14.6A8.6 8.6 0 0 1 9.4 3.6a8.6 8.6 0 1 0 11 11Z"></path>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap wrap--narrow">
+
+    <a class="back-link" href="../index.html">← 返回首页</a>
+
+    <header class="post-head">
+      <h1 class="post-head__title">排版样式一览</h1>
+      <div class="post-head__meta">
+        <time datetime="2026-10-05">2026 年 10 月 5 日</time>
+        <span class="dot" aria-hidden="true"></span>
+        <span>约 5 分钟</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>指南 · 排版</span>
+      </div>
+    </header>
+
+    <article class="article">
+      <p>
+        这一篇是「样式说明书」。写文章时能用到的所有排版元素都汇总在这里，
+        需要时直接复用对应的 HTML。<strong>每一小节下面的说明文字本身，就是该样式的实际效果。</strong>
+      </p>
+
+      <h2>标题</h2>
+      <p>
+        文章标题用 <code>&lt;h1&gt;</code>，正文里只用到 <code>&lt;h2&gt;</code>、<code>&lt;h3&gt;</code>、
+        <code>&lt;h4&gt;</code> 三级。二级标题自带一条细分隔线，用来切分长文章的章节。
+      </p>
+
+      <h3>三级标题长这样</h3>
+      <p>三级标题用于章节内部的小节，字号比正文略大，不带分隔线。</p>
+
+      <h4>四级标题长这样</h4>
+      <p>四级标题用作更细的条目说明，颜色稍浅一些。</p>
+
+      <h2>段落与强调</h2>
+      <p>
+        正文段落使用系统默认的无衬线字体，行高比较宽松，适合长时间阅读。
+        段落之间留出足够的间距，中文尤其需要这种呼吸感。
+      </p>
+      <p>
+        需要强调时，可以用 <strong>加粗（strong）</strong> 表示重要性，
+        用 <em>高亮（em）</em> 标出句子中的重点片段，用 <mark>标记（mark）</mark>
+        突出需要特别留意的字句。此外还可以写上标<sup><a href="#ref1">[1]</a></sup> 做引用标注，
+        或者用 <small>小号文字</small> 补充说明。
+      </p>
+      <p>
+        普通的<a href="../index.html">文字链接</a>会带一条浅色下划线，悬停时变为主色。
+        行内代码用 <code>code</code> 标签，比如 <code>npm install</code> 或者 <code>--accent</code> 这样的变量名。
+      </p>
+
+      <h2>列表</h2>
+
+      <h3>无序列表</h3>
+      <ul>
+        <li>第一项，列表符号是主色的小圆点。</li>
+        <li>第二项，可以写得长一点：如果一行放不下会自动换行，缩进对齐，阅读体验和普通段落保持一致。</li>
+        <li>第三项
+          <ul>
+            <li>嵌套的子项</li>
+            <li>子项也可以再嵌套</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>有序列表</h3>
+      <ol>
+        <li>第一步，先确定要做什么。</li>
+        <li>第二步，把事情拆成可以立刻动手的小块。</li>
+        <li>第三步，从最小的那块开始做。</li>
+      </ol>
+
+      <h2>引用</h2>
+      <p>适合放名言、摘录，或者需要从正文中跳出来的旁白：</p>
+
+      <blockquote>
+        <p>
+          我们并非通过看到更多来获得新知，而是通过看清自己看到的东西。
+        </p>
+        <cite>某位记不清名字的作者</cite>
+      </blockquote>
+
+      <p>引用块内部也可以放多个段落，甚至放列表：</p>
+
+      <blockquote>
+        <p>写文章时有三条简单的原则：</p>
+        <ul>
+          <li>先说结论。</li>
+          <li>只写自己真的想清楚了的部分。</li>
+          <li>不确定的地方，就说不确定。</li>
+        </ul>
+      </blockquote>
+
+      <h2>代码</h2>
+      <p>
+        行内代码在文字里流动，比如 <code>git commit -m "update"</code>；
+        代码块则独立成段，右上角有<strong>一键复制</strong>按钮（鼠标移上去会出现）。
+        给 <code>pre</code> 标签加上 <code>data-lang</code> 属性，还会在顶部显示语言标签。
+      </p>
+
+      <pre data-lang="javascript"><code>// 一个简单的例子
+function greet(name) {
+  const message = `你好，${name}！`;
+  console.log(message);
+  return message;
+}
+
+greet("世界");</code></pre>
+
+      <pre data-lang="bash"><code># 也可以是 shell 命令
+npm run build
+git add .
+git commit -m "feat: 更新首页"</code></pre>
+
+      <pre><code>不加 data-lang 的代码块就是这个样子：
+没有语言标签，也没有额外的留白，纯代码。</code></pre>
+
+      <h2>表格</h2>
+      <p>表格可以横向滚动，长内容不会把版心撑破：</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>元素</th>
+              <th>标签</th>
+              <th>用途</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>加粗</td>
+              <td><code>&lt;strong&gt;</code></td>
+              <td>强调重要性</td>
+            </tr>
+            <tr>
+              <td>高亮</td>
+              <td><code>&lt;em&gt;</code></td>
+              <td>句中重点片段</td>
+            </tr>
+            <tr>
+              <td>标记</td>
+              <td><code>&lt;mark&gt;</code></td>
+              <td>需要特别留意的字句</td>
+            </tr>
+            <tr>
+              <td>代码</td>
+              <td><code>&lt;code&gt;</code></td>
+              <td>行内代码、命令、变量名</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>图片</h2>
+      <p>
+        图片默认带一圈浅色描边和圆角，在浅色页面上不至于和背景糊在一起。
+        配上 <code>figcaption</code> 作为说明文字居中显示。
+      </p>
+
+      <figure>
+        <img src="../assets/img/placeholder.svg" alt="示例配图：几何色块" width="1200" height="560">
+        <figcaption>图：示例配图。实际写作时换成你自己的图片即可。</figcaption>
+      </figure>
+
+      <h2>提示块</h2>
+      <p>用于「注意」「小贴士」「补充说明」这类需要单独拎出来的内容：</p>
+
+      <div class="callout">
+        <span class="callout__title">提示</span>
+        <p>
+          提示块左侧有一条主色的竖线，标题是小号大写字母间距，
+          适合放一行结论或者一句提醒。里面也可以放列表和链接。
+        </p>
+      </div>
+
+      <h2>键盘按键</h2>
+      <p>
+        介绍快捷键时可以用 <code>kbd</code> 标签，比如
+        <kbd>Ctrl</kbd> + <kbd>S</kbd> 保存，或者 <kbd>Enter</kbd> 换行。
+        按键样式有立体感，一眼就能和普通文字区分开。
+      </p>
+
+      <h2>分隔线</h2>
+      <p>普通的分隔线是一条细细的浅色横线，用于隔开内容块。装饰性的分隔线长这样：</p>
+
+      <div class="ornament" role="separator" aria-label="装饰分隔线"><span aria-hidden="true">· · ·</span></div>
+
+      <p>适合用在文章的结尾，或者章节之间的过渡处。</p>
+
+      <h2>小字与脚注</h2>
+      <p>
+        文章末尾的补充说明用小号浅色文字，比如下面这段。
+        它比正文小一号，颜色更淡，不抢戏，但认真看还是看得清。
+      </p>
+
+      <p class="footnote">
+        <span id="ref1">[1]</span>
+        这是一个脚注的示例。上标 <sup><a href="#ref1">[1]</a></sup> 点击会跳到这里。
+        实际写作时把链接的 <code>href</code> 指向脚注的 <code>id</code> 即可。
+      </p>
+
+      <div class="ornament" role="separator" aria-label="装饰分隔线"><span aria-hidden="true">· · ·</span></div>
+
+      <p class="footnote">
+        以上就是全部可用样式。它们都定义在 <code>assets/css/style.css</code> 里，
+        想调整配色、字号或者间距，改那一个文件就行。
+      </p>
+    </article>
+
+    <nav class="post-nav" aria-label="文章导航">
+      <a class="post-nav__item" href="building-this-blog.html">
+        <span class="post-nav__label">上一篇</span>
+        <span class="post-nav__title">这个博客是怎么搭起来的</span>
+      </a>
+    </nav>
+
+    <div class="post-foot">
+      <p><strong>喜欢这篇文章？</strong>欢迎通过 <a href="../feed.xml">RSS</a> 订阅，或者去 <a href="https://github.com/NingYuDaoZu" rel="noopener">GitHub</a> 找我聊聊。</p>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <p>© <span data-year>2026</span> 凝雨道祖 · 用 HTML 手工搭建</p>
+    <ul class="footer-links">
+      <li><a href="../index.html">首页</a></li>
+      <li><a href="../archive.html">归档</a></li>
+      <li><a href="../feed.xml">RSS</a></li>
+      <li><a href="https://github.com/NingYuDaoZu" rel="noopener">GitHub</a></li>
+    </ul>
+    <p class="footer-note">本文为原创内容，转载请注明出处。</p>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

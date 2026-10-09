@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>凝雨道祖的博客</title>
+    <link>https://ningyudaozu.github.io/</link>
+    <description>记录技术、思考与生活。技术实践、学习笔记，以及一些生活里的碎碎念。</description>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <generator>手工制作</generator>
+    <atom:link href="https://ningyudaozu.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>你好，世界</title>
+      <link>https://ningyudaozu.github.io/posts/hello-world.html</link>
+      <guid isPermaLink="true">https://ningyudaozu.github.io/posts/hello-world.html</guid>
+      <pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+      <description>写博客这件事我想了很多年，一直没动手。今天总算把这个小站搭起来了，趁着新鲜劲儿写下第一篇。</description>
+      <category>随笔</category>
+    </item>
+
+    <item>
+      <title>这个博客是怎么搭起来的</title>
+      <link>https://ningyudaozu.github.io/posts/building-this-blog.html</link>
+      <guid isPermaLink="true">https://ningyudaozu.github.io/posts/building-this-blog.html</guid>
+      <pubDate>Wed, 07 Oct 2026 00:00:00 +0000</pubDate>
+      <description>没有 Jekyll，没有 Hexo，没有 npm install。聊聊为什么用纯静态 HTML 搭博客，以及整个目录结构和部署方式。</description>
+      <category>前端</category>
+    </item>
+
+    <item>
+      <title>排版样式一览</title>
+      <link>https://ningyudaozu.github.io/posts/typography.html</link>
+      <guid isPermaLink="true">https://ningyudaozu.github.io/posts/typography.html</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 +0000</pubDate>
+      <description>写文章时能用到的所有排版元素都在这一篇里：标题、列表、引用、代码块、表格、图片、提示块、键盘按键。</description>
+      <category>指南</category>
+    </item>
+
+  </channel>
+</rss>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>这个博客是怎么搭起来的 · 凝雨道祖的博客</title>
+<meta name="description" content="没有 Jekyll，没有 Hexo，没有 npm install。聊聊为什么用纯静态 HTML 搭博客，以及整个目录结构和部署方式。">
+<meta name="author" content="凝雨道祖">
+<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#171512" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="这个博客是怎么搭起来的">
+<meta property="og:description" content="没有框架，没有构建步骤，纯静态 HTML 搭博客的取舍过程。">
+<meta property="og:url" content="https://ningyudaozu.github.io/posts/building-this-blog.html">
+<meta property="article:published_time" content="2026-10-07">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="凝雨道祖的博客 · RSS" href="../feed.xml">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem("blog-theme");
+      if (t) document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="../index.html">
+      <span class="brand__mark" aria-hidden="true"></span>
+      凝雨道祖
+      <span class="brand__sub">Blog</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a class="nav__link" href="../index.html">首页</a>
+      <a class="nav__link" href="../archive.html">归档</a>
+      <a class="nav__link" href="../about.html">关于</a>
+      <button class="theme-toggle" type="button" aria-label="切换深色模式">
+        <svg class="icon icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2"></circle>
+          <path d="M12 2.2v2.4M12 19.4v2.4M2.2 12h2.4M19.4 12h2.4M5.1 5.1l1.7 1.7M17.2 17.2l1.7 1.7M18.9 5.1l-1.7 1.7M6.8 17.2l-1.7 1.7"></path>
+        </svg>
+        <svg class="icon icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20.4 14.6A8.6 8.6 0 0 1 9.4 3.6a8.6 8.6 0 1 0 11 11Z"></path>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap wrap--narrow">
+
+    <a class="back-link" href="../index.html">← 返回首页</a>
+
+    <header class="post-head">
+      <h1 class="post-head__title">这个博客是怎么搭起来的</h1>
+      <div class="post-head__meta">
+        <time datetime="2026-10-07">2026 年 10 月 7 日</time>
+        <span class="dot" aria-hidden="true"></span>
+        <span>约 7 分钟</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>前端 · 折腾记录</span>
+      </div>
+    </header>
+
+    <article class="article">
+      <p>
+        我有一个 GitHub Pages 仓库，一直空着。前几天终于决定把它变成一个博客，
+        然后花了大概一个晚上把整个站点写完了。这篇记录一下方案选择的过程，以及最后落地的样子。
+      </p>
+
+      <h2>需求是什么</h2>
+      <p>动手之前，我先把自己的需求列了一遍——这一步很重要，因为它直接决定了后面不做什么：</p>
+      <ul>
+        <li><strong>能长期维护</strong>。三年后我回来写，不应该还需要先升级依赖。</li>
+        <li><strong>部署零成本</strong>。不买服务器，不配 CI，推上去就能访问。</li>
+        <li><strong>写起来不费劲</strong>。重点是内容，不是折腾工具链。</li>
+        <li><strong>打开够快</strong>。最好首屏一个 RTT 就完事。</li>
+        <li><strong>长得像样</strong>。排版要舒服，手机上也要好看。</li>
+      </ul>
+      <p>
+        注意这里面<strong>没有</strong>「支持 Markdown 写作」「支持标签自动生成」「支持评论系统」这类需求。
+        一开始我也以为自己需要，后来发现那都是工具强加给我的想象。
+      </p>
+
+      <h2>候选方案</h2>
+      <p>主流的路子大概三条，我逐个试了一遍：</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>方案</th>
+              <th>优点</th>
+              <th>代价</th>
+              <th>结论</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Jekyll</strong></td>
+              <td>GitHub Pages 原生支持，写 Markdown，主题多</td>
+              <td>依赖 Ruby；主题改起来要读 Liquid；构建偶尔莫名其妙失败</td>
+              <td>能用，但不够透明</td>
+            </tr>
+            <tr>
+              <td><strong>Hexo / Hugo / Astro</strong></td>
+              <td>生态成熟，主题漂亮，Markdown 工作流舒服</td>
+              <td>需要本地或 CI 构建；依赖会过期；换主题等于重来一次</td>
+              <td>对这个体量来说太重了</td>
+            </tr>
+            <tr>
+              <td><strong>纯静态 HTML</strong></td>
+              <td>零依赖、零构建、完全可控、永不过期</td>
+              <td>每篇文章都是 HTML；列表页要手动更新</td>
+              <td><mark>最后选了它</mark></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        前两条路我都走过。Hexo 尤其典型：装完 <code>node_modules</code> 有 200MB，
+        但真正属于我的内容不到 50KB。半年后回来，<code>npm install</code> 先报三个安全警告，
+        然后主题的某个插件不兼容新版 Node……我意识到，<strong>我维护的不是博客，是一个前端项目</strong>。
+      </p>
+
+      <h2>为什么纯静态反而是对的</h2>
+      <p>博客这个东西有个特点：<strong>它几乎永远是读的，很少是写的</strong>。</p>
+      <p>
+        一个博客的生命周期里，「被访问」的次数是「被编辑」次数的一万倍以上。
+        为一个万分之一频率的操作引入构建系统，是典型的本末倒置。
+      </p>
+      <p>而纯静态 HTML 在「读」这件事上几乎无可挑剔：</p>
+      <ol>
+        <li>浏览器直接渲染，没有水合、没有打包、没有请求瀑布。</li>
+        <li>CDN 就能缓存，断网了只要打开过一次还能看。</li>
+        <li>它不会因为某个依赖被作者删掉而突然白屏。</li>
+      </ol>
+
+      <blockquote>
+        <p>
+          静态网页是互联网上最长寿的内容格式。二十年前写的 HTML，今天浏览器还能渲染；
+          但二十年前的 <code>package.json</code>，今天连安装都装不上。
+        </p>
+      </blockquote>
+
+      <h2>目录结构</h2>
+      <p>整个站点长这样，一目了然：</p>
+
+      <pre data-lang="text"><code>blog/
+├── index.html            # 首页
+├── archive.html          # 归档
+├── about.html            # 关于
+├── 404.html              # 404 页面
+├── feed.xml              # RSS 订阅
+├── sitemap.xml           # 站点地图
+├── robots.txt
+├── .nojekyll             # 告诉 GitHub Pages 别用 Jekyll 处理
+├── assets/
+│   ├── css/style.css     # 全站样式（含深浅色主题）
+│   ├── js/main.js        # 主题切换 + 代码复制
+│   └── img/
+└── posts/
+    └── hello-world.html  # 一篇文章 = 一个 HTML 文件</code></pre>
+
+      <p>
+        没有 <code>node_modules</code>，没有 <code>package.json</code>，没有 <code>config.yml</code>。
+        整个站点加起来不到 100KB，用记事本都能改。
+      </p>
+
+      <h3>关于 .nojekyll</h3>
+      <p>
+        这个空文件值得单独说一下。GitHub Pages 默认会对仓库跑一遍 Jekyll，
+        而 Jekyll 会忽略所有下划线开头的文件和目录。加上 <code>.nojekyll</code>
+        之后，GitHub 就把文件原样输出，既省掉构建时间，也避免莫名其妙的构建报错。
+      </p>
+
+      <h2>几个值得记录的小细节</h2>
+
+      <h3>深浅色主题，而且不闪白</h3>
+      <p>
+        主题跟随系统，也可以手动切换，选择存在 <code>localStorage</code> 里。
+        关键是要在 <code>&lt;head&gt;</code> 里用一段内联脚本提前设置 <code>data-theme</code>，
+        否则深色模式下每次打开都会先闪一下白：
+      </p>
+
+      <pre data-lang="html"><code>&lt;script&gt;
+  (function () {
+    try {
+      var t = localStorage.getItem("blog-theme");
+      if (t) document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+&lt;/script&gt;</code></pre>
+
+      <h3>不加载任何外部字体</h3>
+      <p>
+        中文网页最沉重的资源就是字体，一个思源宋体动辄 5MB+。
+        这里直接用系统字体栈：<code>PingFang SC</code> / <code>Microsoft YaHei</code> /
+        <code>Noto Sans SC</code> 依次回退。不同系统上观感略有差异，但换来的是秒开。
+      </p>
+
+      <h3>没有统计脚本</h3>
+      <p>
+        一开始我准备加个访问量统计，后来放弃了。加了就得处理 Cookie 提示、隐私政策，
+        而我其实也并不真的需要那几个数字。<strong>不收集，就是最好的隐私保护。</strong>
+      </p>
+
+      <h2>怎么部署</h2>
+      <p>如果你也想这样搭一个，步骤短到可以写在一条列表里：</p>
+      <ol>
+        <li>在 GitHub 新建一个仓库，命名为 <code>&lt;你的用户名&gt;.github.io</code>。</li>
+        <li>把站点文件推到这个仓库的根目录。</li>
+        <li>仓库的 <strong>Settings → Pages</strong> 里，把 Source 设为 <code>main</code> 分支根目录。</li>
+        <li>等一分钟，访问 <code>https://&lt;你的用户名&gt;.github.io</code>。</li>
+      </ol>
+
+      <div class="callout">
+        <span class="callout__title">新文章怎么加</span>
+        <p>
+          复制 <code>posts/</code> 下任意一篇文章，改文件名和正文，再把首页和归档页里的列表
+          一行加进去就行，不依赖任何额外工具。
+        </p>
+      </div>
+
+      <h2>写在最后</h2>
+      <p>
+        折腾完回头看，这个方案其实一点都不「高级」。没有 SSG，没有 Islands 架构，
+        没有一行 TypeScript。它唯一的优点是<strong>五年后我还能看懂它、改得动它</strong>。
+      </p>
+      <p>
+        而对于一个博客来说，我觉得这已经是最重要的优点了。工具会过时，写下来的东西不会。
+      </p>
+    </article>
+
+    <nav class="post-nav" aria-label="文章导航">
+      <a class="post-nav__item" href="hello-world.html">
+        <span class="post-nav__label">上一篇</span>
+        <span class="post-nav__title">你好，世界</span>
+      </a>
+      <a class="post-nav__item post-nav__item--next" href="typography.html">
+        <span class="post-nav__label">下一篇</span>
+        <span class="post-nav__title">排版样式一览</span>
+      </a>
+    </nav>
+
+    <div class="post-foot">
+      <p><strong>喜欢这篇文章？</strong>欢迎通过 <a href="../feed.xml">RSS</a> 订阅，或者去 <a href="https://github.com/NingYuDaoZu" rel="noopener">GitHub</a> 找我聊聊。</p>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <p>© <span data-year>2026</span> 凝雨道祖 · 用 HTML 手工搭建</p>
+    <ul class="footer-links">
+      <li><a href="../index.html">首页</a></li>
+      <li><a href="../archive.html">归档</a></li>
+      <li><a href="../feed.xml">RSS</a></li>
+      <li><a href="https://github.com/NingYuDaoZu" rel="noopener">GitHub</a></li>
+    </ul>
+    <p class="footer-note">本文为原创内容，转载请注明出处。</p>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

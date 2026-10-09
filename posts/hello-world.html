@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>你好，世界 · 凝雨道祖的博客</title>
+<meta name="description" content="写博客这件事我想了很多年，今天总算动手了。第一篇文章，聊聊为什么开始，以及这里会写些什么。">
+<meta name="author" content="凝雨道祖">
+<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#171512" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="你好，世界">
+<meta property="og:description" content="写博客这件事我想了很多年，今天总算动手了。">
+<meta property="og:url" content="https://ningyudaozu.github.io/posts/hello-world.html">
+<meta property="article:published_time" content="2026-10-09">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="凝雨道祖的博客 · RSS" href="../feed.xml">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem("blog-theme");
+      if (t) document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="../index.html">
+      <span class="brand__mark" aria-hidden="true"></span>
+      凝雨道祖
+      <span class="brand__sub">Blog</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a class="nav__link" href="../index.html">首页</a>
+      <a class="nav__link" href="../archive.html">归档</a>
+      <a class="nav__link" href="../about.html">关于</a>
+      <button class="theme-toggle" type="button" aria-label="切换深色模式">
+        <svg class="icon icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2"></circle>
+          <path d="M12 2.2v2.4M12 19.4v2.4M2.2 12h2.4M19.4 12h2.4M5.1 5.1l1.7 1.7M17.2 17.2l1.7 1.7M18.9 5.1l-1.7 1.7M6.8 17.2l-1.7 1.7"></path>
+        </svg>
+        <svg class="icon icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20.4 14.6A8.6 8.6 0 0 1 9.4 3.6a8.6 8.6 0 1 0 11 11Z"></path>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap wrap--narrow">
+
+    <a class="back-link" href="../index.html">← 返回首页</a>
+
+    <header class="post-head">
+      <h1 class="post-head__title">你好，世界</h1>
+      <div class="post-head__meta">
+        <time datetime="2026-10-09">2026 年 10 月 9 日</time>
+        <span class="dot" aria-hidden="true"></span>
+        <span>约 3 分钟</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>随笔 · 开篇</span>
+      </div>
+    </header>
+
+    <article class="article">
+      <p>
+        写博客这件事，我想了很久。久到我已经记不清是哪一年开始有这个念头的——大概是刚学编程那会儿，
+        看别人的博客觉得「这事儿挺酷」，于是给自己也立了个 flag。然后就没有然后了。
+      </p>
+      <p>
+        今天总算动手了。趁着新鲜劲儿还在，写下第一篇。
+      </p>
+
+      <h2>为什么一直没开始</h2>
+      <p>
+        说起来有点好笑，我一直没开始写，恰恰是因为<b>太想把这件事做好了</b>。
+      </p>
+      <p>每当我准备动手，脑子里就会冒出一连串问题：</p>
+      <ul>
+        <li>用什么框架？Jekyll、Hexo、Hugo，还是自己写一个？</li>
+        <li>选什么主题？要不要自己设计？</li>
+        <li>域名买哪个？要不要备案？</li>
+        <li>第一篇写什么？写得不好会不会很丢人？</li>
+      </ul>
+      <p>
+        问题越想越多，事情越拖越久。最后往往是花了两天时间研究框架，装了卸、卸了装，
+        然后以「等我有整块时间再好好弄」为借口，把这件事又放回了待办清单。
+      </p>
+
+      <blockquote>
+        <p>完成比完美重要。一个跑起来的丑博客，也比一个存在于待办清单里的漂亮博客强。</p>
+        <cite>某个我早就听过、但今天才真正相信的道理</cite>
+      </blockquote>
+
+      <h2>所以这次我做了什么</h2>
+      <p>
+        这次我给自己定了一个原则：<strong>能用最简单的方式解决，就不要引入任何复杂度</strong>。
+      </p>
+      <p>
+        于是这个博客是纯静态的 HTML。没有框架，没有 <code>npm install</code>，没有构建步骤，
+        也没有一长串配置文件。整个站点就是几个 HTML 文件、一份 CSS、少量 JavaScript，
+        推到 GitHub Pages 上就能访问。具体的取舍过程我写在了
+        <a href="building-this-blog.html">另一篇文章</a>里，这里就不重复了。
+      </p>
+      <p>简单带来的好处是立竿见影的：</p>
+      <ol>
+        <li>没有任何东西需要「先学会」，我现在就能写。</li>
+        <li>改一个字就是改一个字，不需要等构建。</li>
+        <li>五年后它多半还能打开——静态 HTML 是最长寿的网页格式。</li>
+      </ol>
+
+      <h2>这里会写些什么</h2>
+      <p>大概会是这几类：</p>
+      <ul>
+        <li><strong>技术笔记</strong>：踩过的坑、验证过的方案、值得留下来的代码。</li>
+        <li><strong>折腾记录</strong>：搭网站、换工具、折腾硬件，从头到尾的全过程。</li>
+        <li><strong>读书与思考</strong>：看到的书和文章，以及它们让我想到的事。</li>
+        <li><strong>生活碎碎念</strong>：频率最低，但偶尔会有。</li>
+      </ul>
+      <p>
+        我不打算给自己定更新频率。<mark>写得慢没关系，写得假才要命。</mark>
+        宁可一个月不更新，也不想为了凑数发一篇自己都不想回头看的东西。
+      </p>
+
+      <h2>最后</h2>
+      <p>
+        如果你恰好看到这里，谢谢你。这个小站现在还很空，只有三篇文章，其中两篇还是「说明书」性质的。
+        但没关系，总会慢慢长起来的。
+      </p>
+      <p>那么，第一篇就写到这里。世界，你好。</p>
+
+      <div class="ornament" role="separator" aria-label="装饰分隔线"><span aria-hidden="true">· · ·</span></div>
+
+      <p class="footnote">
+        这是本站的第一篇文章。如果你也一直想写点什么但迟迟没动手，希望这篇能给你一点推动力。
+      </p>
+    </article>
+
+    <nav class="post-nav" aria-label="文章导航">
+      <a class="post-nav__item post-nav__item--next" href="building-this-blog.html">
+        <span class="post-nav__label">下一篇</span>
+        <span class="post-nav__title">这个博客是怎么搭起来的</span>
+      </a>
+    </nav>
+
+    <div class="post-foot">
+      <p><strong>喜欢这篇文章？</strong>欢迎通过 <a href="../feed.xml">RSS</a> 订阅，或者去 <a href="https://github.com/NingYuDaoZu" rel="noopener">GitHub</a> 找我聊聊。</p>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <p>© <span data-year>2026</span> 凝雨道祖 · 用 HTML 手工搭建</p>
+    <ul class="footer-links">
+      <li><a href="../index.html">首页</a></li>
+      <li><a href="../archive.html">归档</a></li>
+      <li><a href="../feed.xml">RSS</a></li>
+      <li><a href="https://github.com/NingYuDaoZu" rel="noopener">GitHub</a></li>
+    </ul>
+    <p class="footer-note">本文为原创内容，转载请注明出处。</p>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

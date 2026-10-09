@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-label="示例配图：几何色块">
+  <rect width="1200" height="560" fill="#f4f1ea"/>
+  <rect x="118" y="118" width="322" height="322" rx="30" fill="#c4472c" opacity="0.92"/>
+  <circle cx="690" cy="280" r="142" fill="#22201c" opacity="0.12"/>
+  <rect x="900" y="176" width="184" height="206" rx="22" fill="#c4472c" opacity="0.32"/>
+  <path d="M118 470h964" stroke="#22201c" stroke-width="3" opacity="0.16" stroke-linecap="round"/>
+  <circle cx="1052" cy="122" r="16" fill="#22201c" opacity="0.18"/>
+</svg>

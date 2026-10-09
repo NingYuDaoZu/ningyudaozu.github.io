@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>归档 · 凝雨道祖的博客</title>
+<meta name="description" content="凝雨道祖的博客文章归档，按年份整理。">
+<meta name="author" content="凝雨道祖">
+<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#171512" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="归档 · 凝雨道祖的博客">
+<meta property="og:url" content="https://ningyudaozu.github.io/archive.html">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="凝雨道祖的博客 · RSS" href="feed.xml">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem("blog-theme");
+      if (t) document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="index.html">
+      <span class="brand__mark" aria-hidden="true"></span>
+      凝雨道祖
+      <span class="brand__sub">Blog</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a class="nav__link" href="index.html">首页</a>
+      <a class="nav__link is-active" href="archive.html">归档</a>
+      <a class="nav__link" href="about.html">关于</a>
+      <button class="theme-toggle" type="button" aria-label="切换深色模式">
+        <svg class="icon icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2"></circle>
+          <path d="M12 2.2v2.4M12 19.4v2.4M2.2 12h2.4M19.4 12h2.4M5.1 5.1l1.7 1.7M17.2 17.2l1.7 1.7M18.9 5.1l-1.7 1.7M6.8 17.2l-1.7 1.7"></path>
+        </svg>
+        <svg class="icon icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20.4 14.6A8.6 8.6 0 0 1 9.4 3.6a8.6 8.6 0 1 0 11 11Z"></path>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap wrap--narrow">
+
+    <div class="section-head" style="padding-top:0">
+      <h1 class="section-head__title">文章归档</h1>
+      <a class="section-head__more" href="feed.xml">RSS 订阅 →</a>
+    </div>
+    <p style="margin:-0.5rem 0 2.75rem;color:var(--ink-3);font-size:0.945rem">
+      共 3 篇文章。写得不快，但尽量每篇都值得读。
+    </p>
+
+    <section class="year-group">
+      <h2 class="year-group__title">2026</h2>
+      <ul class="archive-list">
+        <li class="archive-item">
+          <time class="archive-item__date" datetime="2026-10-09">10-09</time>
+          <h3 class="archive-item__title"><a href="posts/hello-world.html">你好，世界</a></h3>
+          <span class="archive-item__tags">随笔 · 开篇</span>
+        </li>
+        <li class="archive-item">
+          <time class="archive-item__date" datetime="2026-10-07">10-07</time>
+          <h3 class="archive-item__title"><a href="posts/building-this-blog.html">这个博客是怎么搭起来的</a></h3>
+          <span class="archive-item__tags">前端 · 折腾记录</span>
+        </li>
+        <li class="archive-item">
+          <time class="archive-item__date" datetime="2026-10-05">10-05</time>
+          <h3 class="archive-item__title"><a href="posts/typography.html">排版样式一览</a></h3>
+          <span class="archive-item__tags">指南 · 排版</span>
+        </li>
+      </ul>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <p>© <span data-year>2026</span> 凝雨道祖 · 用 HTML 手工搭建</p>
+    <ul class="footer-links">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="about.html">关于</a></li>
+      <li><a href="feed.xml">RSS</a></li>
+      <li><a href="https://github.com/NingYuDaoZu" rel="noopener">GitHub</a></li>
+    </ul>
+    <p class="footer-note">本站为纯静态站点，托管于 GitHub Pages。内容均为原创，转载请注明出处。</p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
